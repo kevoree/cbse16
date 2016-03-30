@@ -1,0 +1,134 @@
+[slide cover]
+![]($ROOT/images/cover_pimped.png)
+
+[slide]
+## About us
+
+>  **HEADS Project**  
+> *European Union Seventh Framework Program (FP7/2007-2013)*
+
+- *Authors*
+ - **Brice Morin**: *research scientist* at SINTEF ICT, Oslo, Norway
+ - **Maxime Tricoire**: *research engineer* at INRIA, Rennes, France
+
+// list all the 9 authors on the paper ?
+
+[slide]
+## Overview
+
+* <span style="font-weight: bold">Motivation</span>  
+ :fa-arrow-circle-o-right: **why** do we need *dynamically reconfigurable architectures* for SPAs
+* <span style="font-weight: bold">Idea</span>  
+ :fa-arrow-circle-o-right: **how**  we propose to realize this idea
+* <span style="font-weight: bold">Validation</span>  
+ :fa-arrow-circle-o-right: **how** does this approach performs?
+
+[slide shout]
+## **>** Motivation
+
+[slide]
+## **>** Why Single-Page Application
+* software are moving from:
+  * traditional :fa-desktop: desktop-based applications
+  * to client-server architectures hosted in the cloud :fa-cloud:
+
+
+* Web browsers :fa-chrome: :fa-firefox: :fa-safari: behave as application containers
+	* E-mail clients, Word processors,  Music Collection Managers, IDEs, ...
+
+[slide]
+## **>** Why Single-Page Application
+ - SPAs are the new desktop applications  
+:fa-arrow-circle-o-right: **fit** on a single web page  
+:fa-arrow-circle-o-right: provide a **fluid** user experience  by avoiding page reloads
+
+
+- **But**, unlike well-known desktop applications such as *Eclipse*  
+:fa-arrow-circle-o-right: no :fa-plug: pluggable architecture pattern frameworks  
+:fa-arrow-circle-o-right: no **dynamic** component loading **at runtime**
+
+[slide]
+## **>** Why Single-Page Application
+ > Challenges
+ 
+ * create a  **component-based** platform
+ * that can adapt **at runtime**
+ * according to a **configuration model**
+
+[slide shout]
+## **>** Idea
+
+[slide]
+## **>** Models@run.time with Kevoree
+* François Fouquet, PhD Thesis
+* enabling **distributed reconfigurable** software development
+* build around a **component model**
+* offers:
+ *  **configuration** languages (visual & script)
+ *  platform **runtimes** (Java, JavaScript, C#, ...)
+ *  many development **tools** (IDE plugins, Web editor, ...)
+
+[slide]
+## **>** Models@run.time with Kevoree
+
+<div style="position: absolute; top: 180px; bottom: 20px; left: 50px; width: 45%; font-size: 18px;">
+  <span style="font-size: 24px">**meta-model (static)**</span>  
+	<span style="font-size: 18px">defined as *EMF/Ecore, UML, DSL, ...*</span>  
+	<span style="font-size: 18px">purpose: **domain definition**</span>  
+	<div style="margin-left: 20px">
+	  <img src="$ROOT/images/model.png" width="60%"/>
+	  <img src="$ROOT/images/textual_model.png" width="60%"/>
+	</div>
+  <span class="kevIcon kevOrange fa fa-long-arrow-right" style="font-size:65px;position:absolute;right:40px;top:200px;"/></span>
+</div>
+
+<div style="position: absolute;  top: 180px; bottom: 20px; left: 50%; width: 45%; padding-left: 8px; font-size: 18px;">
+  <span style="font-size: 24px">**model (dynamic)**</span>  
+	<span style="font-size: 18px">implemented as *Java, JavaScript, TypeScript, C#, ...*</span>  
+	<span style="font-size: 18px;">purpose: **runtime usage**</span>  
+	<img src="$ROOT/images/generated_mode.png" width="200px"/>
+  <img src="$ROOT/images/generated_mode.png" width="200px" style="position:absolute; left:20px; top: 131px; border-top: 1px solid white; border-left: 1px solid white" />
+  <img src="$ROOT/images/generated_mode.png" width="200px" style="position:absolute; left:33px; top: 143px; border-top: 1px solid white; border-left: 1px solid white"/>  
+	<span class="kevOrange" style="font-size:120px;position: absolute; left: 235px; top: 90px">&#125;</span>
+	<span style="position: absolute; top: 120px; left: 280px">**object graph**</span>
+	<img src="$ROOT/images/modeling_space_graph.jpg" width="100px" style="position: absolute; left: 280px; top: 150px" />
+	</div>
+</div>
+
+[slide]
+## **>** Kevoree Instance model
+
+ * Visual **language** to abstract distributed **architectures**
+ * **Edit** models live from your browser :fa-chrome: :fa-firefox: :fa-safari:
+ * Provide cross-platform **contract-aware** components
+
+[slide]
+## **>** Kevoree Instance model
+
+ <img src="$ROOT/images/editor.png" width="600px" style="margin-left: 80px"/>
+
+[slide]
+## **>** Kevoree Instance model
+
+ <img src="$ROOT/images/script_editor.png" width="600px" style="margin-left: 80px"/>
+
+[slide]
+## **>** Why Kevoree?
+ * manage distributed heterogeneous architectures
+  * **distributed**: provides different means of communications
+  * **heterogeneous**: supports multiple runtime platforms
+ 
+* Kevoree provides a JavaScript server-side platform to develop component-based architectures
+
+[slide]
+## **>** Introducing KevoreeJS
+* server-side module loading is made using **npm**
+* foo
+* bar
+
+[slide]
+## **>** Introducing KevoreeJS in Browser
+
+* allow components to define a **user-interface** using **already existing** Web technologies
+* allow **user-interface** to tell their container how they should be **rendered**
+* take advantage of **Kevoree**'s capabilities to adapt at runtime
