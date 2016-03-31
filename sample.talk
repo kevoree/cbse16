@@ -1,6 +1,13 @@
 [slide cover]
 ![]($ROOT/images/cover_pimped.png)
 
+<style>
+	.slide pre code {
+	  line-height: 30px;
+		font-size: 20px;
+	}
+</style>
+
 [slide]
 ## About us
 
@@ -19,7 +26,9 @@
 * <span style="font-weight: bold">Motivation</span>  
  :fa-arrow-circle-o-right: **why** do we need *dynamically reconfigurable architectures* for SPAs
 * <span style="font-weight: bold">Idea</span>  
- :fa-arrow-circle-o-right: **how**  we propose to realize this idea
+ :fa-arrow-circle-o-right: **what**  we want to achieve with our approach
+* <span style="font-weight: bold">Proposition</span>  
+ :fa-arrow-circle-o-right: **how** we propose to enable this idea
 * <span style="font-weight: bold">Validation</span>  
  :fa-arrow-circle-o-right: **how** does this approach performs?
 
@@ -55,18 +64,12 @@
  * that can adapt **at runtime**
  * according to a **configuration model**
 
-[slide shout]
-## **>** Idea
-
 [slide]
-## **>** Models@run.time with Kevoree
-* François Fouquet, PhD Thesis
-* enabling **distributed reconfigurable** software development
-* build around a **component model**
-* offers:
- *  **configuration** languages (visual & script)
- *  platform **runtimes** (Java, JavaScript, C#, ...)
- *  many development **tools** (IDE plugins, Web editor, ...)
+## **>** The models@run.time paradigm
+* extends the usage of **models** to the **runtime environment**
+* models@run.time are **continuously updated** to reflect the state of a system during its **execution (runtime)**
+* the goal is to manage the complexity of **adaptive software systems**
+* often **runtime models** are used to support **decision-making** and **reasoning processes** of self-adaptive systems
 
 [slide]
 ## **>** Models@run.time with Kevoree
@@ -95,40 +98,131 @@
 	</div>
 </div>
 
-[slide]
-## **>** Kevoree Instance model
-
- * Visual **language** to abstract distributed **architectures**
- * **Edit** models live from your browser :fa-chrome: :fa-firefox: :fa-safari:
- * Provide cross-platform **contract-aware** components
+[slide shout]
+## **>** Idea
 
 [slide]
-## **>** Kevoree Instance model
+## Extend Kevoree to **client-based** platforms such as **Web browsers**
 
- <img src="$ROOT/images/editor.png" width="600px" style="margin-left: 80px"/>
-
-[slide]
-## **>** Kevoree Instance model
-
- <img src="$ROOT/images/script_editor.png" width="600px" style="margin-left: 80px"/>
-
-[slide]
-## **>** Why Kevoree?
- * manage distributed heterogeneous architectures
-  * **distributed**: provides different means of communications
-  * **heterogeneous**: supports multiple runtime platforms
- 
-* Kevoree provides a JavaScript server-side platform to develop component-based architectures
+<img src="$ROOT/images/server.png" width="150px" style="position:absolute; top: 300px"/>
+<span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 300px"></span>
+<img src="$ROOT/images/modeling_space_graph.jpg" width="100px" style="position:absolute; top: 300px; left: 400px"/>
+<span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 560px"></span>
+<img src="$ROOT/images/devices.png" width="200px" style="position:absolute; top: 300px; right: 150px"/>
 
 [slide]
-## **>** Introducing KevoreeJS
-* server-side module loading is made using **npm**
-* foo
-* bar
+## **>** Idea
+
+ * Single-Page Application **container**
+ * that leverages **models@run.time** to provide **distribution** and **adaptability** 
+ * :fa-download: **download**, :fa-spinner: **install** and :fa-play: **run** the necessary **components** by itself
+ * provide a **composable** user-interface **dashboard** :fa-desktop:
+
+:fa-arrow-circle-o-right: **everything from a Web browser** without page reloads
+
+[slide shout]
+## **>** Proposition
 
 [slide]
-## **>** Introducing KevoreeJS in Browser
+## **>** Proposition
 
-* allow components to define a **user-interface** using **already existing** Web technologies
-* allow **user-interface** to tell their container how they should be **rendered**
-* take advantage of **Kevoree**'s capabilities to adapt at runtime
+
+* standalone component **bundles**
+* **contract-aware components** using Kevoree
+* **AngularJS** defined user-interface
+*  user-interface **DSL** (JSON metadata)
+
+// peut-être zappé le côté UI et plus parler du module loading ?  
+// globallement plus parler des challenges du papier ?
+
+[slide shout]
+## **>** Component bundles
+
+[slide]
+## **>** Component bundles
+
+* **server-side** modules use **CommonJS** (Node.js)
+* are meant to be **split** in a multitude of sub-modules (dependencies)
+* CommonJS is **not** the standard for **Web browsers** :fa-chrome: :fa-firefox: :fa-safari:
+* the more dependencies they have the bigger the graph gets
+
+:fa-arrow-circle-o-right: **proposition**: use modules as **standalone bundles** :fa-archive:
+
+[slide]
+## **>** What is a standalone bundle ?
+
+* takes modules with **dependencies** and generates **static assets**
+* using **transformations** to comply with Web browsers :fa-chrome: :fa-firefox: :fa-safari:
+* outputs :fa-file: **one single**  file
+
+:fa-arrow-circle-o-right: using bundles **narrows** the download **down to one** request per component
+
+[slide shout]
+## **>** Contract-aware
+
+[slide]
+## **>** Contract-aware components
+
+* use of **Kevoree** to define **contracts**
+
+```js
+var ConsolePrinter = AbstractComponent.extend({
+  // naming convention "in_" is how you define an input port
+  in_input: function (msg) {
+	  console.log('> '+msg);
+  }
+});
+```
+
+[slide]
+## **>** Contract-aware components
+
+
+
+```js
+var Ticker = AbstractComponent.extend({
+  // this method is called on start-up
+  start: function () {
+    var self = this;
+    setTimeout(function () {
+	    // sends random number on output port every 2 seconds
+	    self.out_tick(Math.random()*100));
+    }, 2000);
+  },
+
+  out_tick: function (msg) { /* redefined at runtime */ }
+});
+```
+
+[slide]
+## **>** Contract-aware components
+
+<img src="$ROOT/images/editor.png" height="400px" style="position: absolute; left: 200px" />
+
+[slide shout]
+## **>** AngularJS UI
+
+[slide]
+## **>** AngularJS User-interface
+
+* supported by **Google**
+* **widely** used front-end **framework**
+* gives **2-way data-binding** between HTML :fa-arrows-h: JavaScript model
+
+:fa-arrow-circle-o-right: re-use **community adopted** Web technologies
+
+[slide]
+## **>** User-interface DSL
+
+* provide a way to **describe** how to **render**
+* **load third-party** scripts & styles
+* define the **meta-data** your UI **needs** in JSON
+
+```json
+{
+  "layout": {
+    "width": 2,
+    "height": 1
+  }
+}
+```

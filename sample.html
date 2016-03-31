@@ -2676,7 +2676,12 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 	<script>window.selectedSlideIndex = 0;</script>
 
 	<section id="slide_0" class="slide cover"><div id="slide_0_wrap"><p><img src="images/cover_pimped.png" alt=""></p>
-</div></section><section id="slide_1" class="slide"><div id="slide_1_wrap"><h2 id="about-us">About us</h2>
+<style>
+    .slide pre code {
+      line-height: 30px;
+        font-size: 20px;
+    }
+</style></div></section><section id="slide_1" class="slide"><div id="slide_1_wrap"><h2 id="about-us">About us</h2>
 <blockquote>
 <p> <strong>HEADS Project</strong><br><em>European Union Seventh Framework Program (FP7/2007-2013)</em></p>
 </blockquote>
@@ -2691,7 +2696,8 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </div></section><section id="slide_2" class="slide"><div id="slide_2_wrap"><h2 id="overview">Overview</h2>
 <ul>
 <li><span style="font-weight: bold">Motivation</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>why</strong> do we need <em>dynamically reconfigurable architectures</em> for SPAs</li>
-<li><span style="font-weight: bold">Idea</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>how</strong>  we propose to realize this idea</li>
+<li><span style="font-weight: bold">Idea</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>what</strong>  we want to achieve with our approach</li>
+<li><span style="font-weight: bold">Proposition</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>how</strong> we propose to enable this idea</li>
 <li><span style="font-weight: bold">Validation</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>how</strong> does this approach performs?</li>
 </ul>
 </div></section><section id="slide_3" class="slide shout"><div id="slide_3_wrap"><h2 id="-motivation"><strong>&gt;</strong> Motivation</h2>
@@ -2725,20 +2731,14 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>that can adapt <strong>at runtime</strong></li>
 <li>according to a <strong>configuration model</strong></li>
 </ul>
-</div></section><section id="slide_7" class="slide shout"><div id="slide_7_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
-</div></section><section id="slide_8" class="slide"><div id="slide_8_wrap"><h2 id="-models-run-time-with-kevoree"><strong>&gt;</strong> Models@run.time with Kevoree</h2>
+</div></section><section id="slide_7" class="slide"><div id="slide_7_wrap"><h2 id="-the-models-run-time-paradigm"><strong>&gt;</strong> The models@run.time paradigm</h2>
 <ul>
-<li>François Fouquet, PhD Thesis</li>
-<li>enabling <strong>distributed reconfigurable</strong> software development</li>
-<li>build around a <strong>component model</strong></li>
-<li>offers:<ul>
-<li><strong>configuration</strong> languages (visual &amp; script)</li>
-<li>platform <strong>runtimes</strong> (Java, JavaScript, C#, ...)</li>
-<li>many development <strong>tools</strong> (IDE plugins, Web editor, ...)</li>
+<li>extends the usage of <strong>models</strong> to the <strong>runtime environment</strong></li>
+<li>models@run.time are <strong>continuously updated</strong> to reflect the state of a system during its <strong>execution (runtime)</strong></li>
+<li>the goal is to manage the complexity of <strong>adaptive software systems</strong></li>
+<li>often <strong>runtime models</strong> are used to support <strong>decision-making</strong> and <strong>reasoning processes</strong> of self-adaptive systems</li>
 </ul>
-</li>
-</ul>
-</div></section><section id="slide_9" class="slide"><div id="slide_9_wrap"><h2 id="-models-run-time-with-kevoree"><strong>&gt;</strong> Models@run.time with Kevoree</h2>
+</div></section><section id="slide_8" class="slide"><div id="slide_8_wrap"><h2 id="-models-run-time-with-kevoree"><strong>&gt;</strong> Models@run.time with Kevoree</h2>
 <div style="position: absolute; top: 180px; bottom: 20px; left: 50px; width: 45%; font-size: 18px;">
   <span style="font-size: 24px"><strong>meta-model (static)</strong></span><br>    <span style="font-size: 18px">defined as <em>EMF/Ecore, UML, DSL, ...</em></span><br>    <span style="font-size: 18px">purpose: <strong>domain definition</strong></span><br>    <div style="margin-left: 20px">
       <img src="images/model.png" width="60%"/>
@@ -2756,39 +2756,94 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
     </div>
 </div>
 
-</div></section><section id="slide_10" class="slide"><div id="slide_10_wrap"><h2 id="-kevoree-instance-model"><strong>&gt;</strong> Kevoree Instance model</h2>
+</div></section><section id="slide_9" class="slide shout"><div id="slide_9_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
+</div></section><section id="slide_10" class="slide"><div id="slide_10_wrap"><h2 id="extend-kevoree-to-client-based-platforms-such-as-web-browsers-">Extend Kevoree to <strong>client-based</strong> platforms such as <strong>Web browsers</strong></h2>
+<p><img src="images/server.png" width="150px" style="position:absolute; top: 300px"/>
+<span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 300px"></span>
+<img src="images/modeling_space_graph.jpg" width="100px" style="position:absolute; top: 300px; left: 400px"/>
+<span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 560px"></span>
+<img src="images/devices.png" width="200px" style="position:absolute; top: 300px; right: 150px"/></p>
+</div></section><section id="slide_11" class="slide"><div id="slide_11_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
 <ul>
-<li>Visual <strong>language</strong> to abstract distributed <strong>architectures</strong></li>
-<li><strong>Edit</strong> models live from your browser <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span></li>
-<li>Provide cross-platform <strong>contract-aware</strong> components</li>
+<li>Single-Page Application <strong>container</strong></li>
+<li>that leverages <strong>models@run.time</strong> to provide <strong>distribution</strong> and <strong>adaptability</strong> </li>
+<li><span class="kevOrange kevIcon fa fa-download"></span> <strong>download</strong>, <span class="kevOrange kevIcon fa fa-spinner"></span> <strong>install</strong> and <span class="kevOrange kevIcon fa fa-play"></span> <strong>run</strong> the necessary <strong>components</strong> by itself</li>
+<li>provide a <strong>composable</strong> user-interface <strong>dashboard</strong> <span class="kevOrange kevIcon fa fa-desktop"></span></li>
 </ul>
-</div></section><section id="slide_11" class="slide"><div id="slide_11_wrap"><h2 id="-kevoree-instance-model"><strong>&gt;</strong> Kevoree Instance model</h2>
-<p> <img src="images/editor.png" width="600px" style="margin-left: 80px"/>  </p>
-</div></section><section id="slide_12" class="slide"><div id="slide_12_wrap"><h2 id="-kevoree-instance-model"><strong>&gt;</strong> Kevoree Instance model</h2>
-<p> <img src="images/script_editor.png" width="600px" style="margin-left: 80px"/>  </p>
-</div></section><section id="slide_13" class="slide"><div id="slide_13_wrap"><h2 id="-why-kevoree-"><strong>&gt;</strong> Why Kevoree?</h2>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>everything from a Web browser</strong> without page reloads</p>
+</div></section><section id="slide_12" class="slide shout"><div id="slide_12_wrap"><h2 id="-proposition"><strong>&gt;</strong> Proposition</h2>
+</div></section><section id="slide_13" class="slide"><div id="slide_13_wrap"><h2 id="-proposition"><strong>&gt;</strong> Proposition</h2>
 <ul>
-<li>manage distributed heterogeneous architectures<ul>
-<li><strong>distributed</strong>: provides different means of communications</li>
-<li><strong>heterogeneous</strong>: supports multiple runtime platforms</li>
+<li>standalone component <strong>bundles</strong></li>
+<li><strong>contract-aware components</strong> using Kevoree</li>
+<li><strong>AngularJS</strong> defined user-interface</li>
+<li>user-interface <strong>DSL</strong> (JSON metadata)</li>
 </ul>
-</li>
-</ul>
+</div></section><section id="slide_14" class="slide shout"><div id="slide_14_wrap"><h2 id="-component-bundles"><strong>&gt;</strong> Component bundles</h2>
+</div></section><section id="slide_15" class="slide"><div id="slide_15_wrap"><h2 id="-component-bundles"><strong>&gt;</strong> Component bundles</h2>
 <ul>
-<li>Kevoree provides a JavaScript server-side platform to develop component-based architectures  </li>
+<li><strong>server-side</strong> modules use <strong>CommonJS</strong> (Node.js)</li>
+<li>are meant to be <strong>split</strong> in a multitude of sub-modules (dependencies)</li>
+<li>CommonJS is <strong>not</strong> the standard for <strong>Web browsers</strong> <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span></li>
+<li>the more dependencies they have the bigger the graph gets</li>
 </ul>
-</div></section><section id="slide_14" class="slide"><div id="slide_14_wrap"><h2 id="-introducing-kevoreejs"><strong>&gt;</strong> Introducing KevoreeJS</h2>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>proposition</strong>: use modules as <strong>standalone bundles</strong> <span class="kevOrange kevIcon fa fa-archive"></span></p>
+</div></section><section id="slide_16" class="slide"><div id="slide_16_wrap"><h2 id="-what-is-a-standalone-bundle-"><strong>&gt;</strong> What is a standalone bundle ?</h2>
 <ul>
-<li>server-side module loading is made using <strong>npm</strong></li>
-<li>foo</li>
-<li>bar</li>
+<li>takes modules with <strong>dependencies</strong> and generates <strong>static assets</strong></li>
+<li>using <strong>transformations</strong> to comply with Web browsers <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span></li>
+<li>outputs <span class="kevOrange kevIcon fa fa-file"></span> <strong>one single</strong>  file</li>
 </ul>
-</div></section><section id="slide_15" class="slide"><div id="slide_15_wrap"><h2 id="-introducing-kevoreejs-in-browser"><strong>&gt;</strong> Introducing KevoreeJS in Browser</h2>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> using bundles <strong>narrows</strong> the download <strong>down to one</strong> request per component</p>
+</div></section><section id="slide_17" class="slide shout"><div id="slide_17_wrap"><h2 id="-contract-aware"><strong>&gt;</strong> Contract-aware</h2>
+</div></section><section id="slide_18" class="slide"><div id="slide_18_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <ul>
-<li>allow components to define a <strong>user-interface</strong> using <strong>already existing</strong> Web technologies</li>
-<li>allow <strong>user-interface</strong> to tell their container how they should be <strong>rendered</strong></li>
-<li>take advantage of <strong>Kevoree</strong>&#39;s capabilities to adapt at runtime</li>
+<li>use of <strong>Kevoree</strong> to define <strong>contracts</strong></li>
 </ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> ConsolePrinter = AbstractComponent.extend({
+  <span class="hljs-comment">// naming convention "in_" is how you define an input port</span>
+  in_input: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'&gt; '</span>+msg);
+  }
+});
+</code></pre>
+</div></section><section id="slide_19" class="slide"><div id="slide_19_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Ticker = AbstractComponent.extend({
+  <span class="hljs-comment">// this method is called on start-up</span>
+  start: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// sends random number on output port every 2 seconds</span>
+        self.out_tick(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">100</span>));
+    }, <span class="hljs-number">2000</span>);
+  },
+
+  out_tick: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg</span>) </span>{ <span class="hljs-comment">/* redefined at runtime */</span> }
+});
+</code></pre>
+</div></section><section id="slide_20" class="slide"><div id="slide_20_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
+<p><img src="images/editor.png" height="400px" style="position: absolute; left: 200px" /></p>
+</div></section><section id="slide_21" class="slide shout"><div id="slide_21_wrap"><h2 id="-angularjs-ui"><strong>&gt;</strong> AngularJS UI</h2>
+</div></section><section id="slide_22" class="slide"><div id="slide_22_wrap"><h2 id="-angularjs-user-interface"><strong>&gt;</strong> AngularJS User-interface</h2>
+<ul>
+<li>supported by <strong>Google</strong></li>
+<li><strong>widely</strong> used front-end <strong>framework</strong></li>
+<li>gives <strong>2-way data-binding</strong> between HTML <span class="kevOrange kevIcon fa fa-arrows-h"></span> JavaScript model</li>
+</ul>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies  </p>
+</div></section><section id="slide_23" class="slide"><div id="slide_23_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+<ul>
+<li>provide a way to <strong>describe</strong> how to <strong>render</strong></li>
+<li><strong>load third-party</strong> scripts &amp; styles</li>
+<li>define the <strong>meta-data</strong> your UI <strong>needs</strong> in JSON</li>
+</ul>
+<pre><code class="lang-json">{
+  "<span class="hljs-attribute">layout</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">width</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">height</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  </span>}
+</span>}
+</code></pre>
 </div></section>
 
 	<div class="progress"><div></div></div>
