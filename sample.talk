@@ -63,6 +63,7 @@
  * create a  **component-based** platform
  * that can adapt **at runtime**
  * according to a **configuration model**
+ * within a **Web browser**
 
 [slide]
 ## **>** The models@run.time paradigm
@@ -174,6 +175,9 @@ var ConsolePrinter = AbstractComponent.extend({
 });
 ```
 
+// might gonna need to present Kevoree a bit before saying this  
+// or do not show code but explain with words how contracts are made
+
 [slide]
 ## **>** Contract-aware components
 
@@ -200,32 +204,74 @@ var Ticker = AbstractComponent.extend({
 <img src="$ROOT/images/editor.png" height="400px" style="position: absolute; left: 200px" />
 
 [slide shout]
-## **>** AngularJS UI
+## **>** Component UI
 
 [slide]
-## **>** AngularJS User-interface
+## **>** Component UI: AngularJS
 
-* supported by **Google**
+* **AngularJS** is developped by **Google**
 * **widely** used front-end **framework**
 * gives **2-way data-binding** between HTML :fa-arrows-h: JavaScript model
 
 :fa-arrow-circle-o-right: re-use **community adopted** Web technologies
 
 [slide]
+## **>** Component UI: AngularJS
+
+* **classic** AngularJS usage
+* every component defines a :fa-cog: **controller** which is bound to the :fa-eye: **view**
+* so the view can **adapt** according to:
+ *  the component's **lifecycle**
+ *  **incoming**/**outcoming** messages 
+
+:fa-arrow-circle-o-right: reactive component's UI
+
+[slide shout]
 ## **>** User-interface DSL
 
-* **describe** how component should **render**
-* define **third-party** scripts & styles to load
-* list **AngularJS** modules to load
+[slide]
+## **>** User-interface DSL
 
-```json
-{
-  "layout": {
-    "width": 2,
-    "height": 1
-  }
-}
-```
+<ul style="margin: 0">
+  <li>**describe** how component should **render**</li>
+</ul>
+
+<pre style="margin-bottom: 10px">
+<code style="font-size: 16px; line-height: 20px"> {
+   "layout": {
+     "width": 2,
+     "height": 1
+   }
+ }</code>
+</pre>
+
+<ul style="margin: 0">
+  <li>define **third-party** scripts & styles to load</li>
+</ul>
+
+<pre style="margin-bottom: 10px">
+<code style="font-size: 16px; line-height: 20px"> {
+   "styles": [ 'https://le-cdn.org/my-style.css' ],
+   "scripts": [ 'https://le-cdn.org/my-lib.js' ]
+ }</code>
+</pre>
+
+<ul style="margin: 0">
+  <li>list **AngularJS** modules to load</li>
+</ul>
+
+<pre style="margin-bottom: 10px">
+<code style="font-size: 16px; line-height: 20px"> { "ngModules": [ 'ui.bootstrap' ] }</code>
+</pre>
+</pre>
+
+[slide]
+## **>** Introducing KevoreeJS in the Browser
+ 
+<img src="$ROOT/images/runjs.png" width="700px" style="margin-left: 50px" />
+
+[slide shout]
+## **>** Validation
 
 [slide]
 ## New Slide

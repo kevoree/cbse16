@@ -2730,6 +2730,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>create a  <strong>component-based</strong> platform</li>
 <li>that can adapt <strong>at runtime</strong></li>
 <li>according to a <strong>configuration model</strong></li>
+<li>within a <strong>Web browser</strong></li>
 </ul>
 </div></section><section id="slide_7" class="slide"><div id="slide_7_wrap"><h2 id="-the-models-run-time-paradigm"><strong>&gt;</strong> The models@run.time paradigm</h2>
 <ul>
@@ -2808,6 +2809,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
   }
 });
 </code></pre>
+<p>// might gonna need to present Kevoree a bit before saying this<br>// or do not show code but explain with words how contracts are made</p>
 </div></section><section id="slide_19" class="slide"><div id="slide_19_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> Ticker = AbstractComponent.extend({
   <span class="hljs-comment">// this method is called on start-up</span>
@@ -2824,28 +2826,62 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </code></pre>
 </div></section><section id="slide_20" class="slide"><div id="slide_20_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <p><img src="images/editor.png" height="400px" style="position: absolute; left: 200px" /></p>
-</div></section><section id="slide_21" class="slide shout"><div id="slide_21_wrap"><h2 id="-angularjs-ui"><strong>&gt;</strong> AngularJS UI</h2>
-</div></section><section id="slide_22" class="slide"><div id="slide_22_wrap"><h2 id="-angularjs-user-interface"><strong>&gt;</strong> AngularJS User-interface</h2>
+</div></section><section id="slide_21" class="slide shout"><div id="slide_21_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+</div></section><section id="slide_22" class="slide"><div id="slide_22_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
 <ul>
-<li>supported by <strong>Google</strong></li>
+<li><strong>AngularJS</strong> is developped by <strong>Google</strong></li>
 <li><strong>widely</strong> used front-end <strong>framework</strong></li>
 <li>gives <strong>2-way data-binding</strong> between HTML <span class="kevOrange kevIcon fa fa-arrows-h"></span> JavaScript model</li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies  </p>
-</div></section><section id="slide_23" class="slide"><div id="slide_23_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_23" class="slide"><div id="slide_23_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
 <ul>
-<li><strong>describe</strong> how component should <strong>render</strong></li>
-<li>define <strong>third-party</strong> scripts &amp; styles to load</li>
-<li>list <strong>AngularJS</strong> modules to load</li>
+<li><strong>classic</strong> AngularJS usage</li>
+<li>every component defines a <span class="kevOrange kevIcon fa fa-cog"></span> <strong>controller</strong> which is bound to the <span class="kevOrange kevIcon fa fa-eye"></span> <strong>view</strong></li>
+<li>so the view can <strong>adapt</strong> according to:<ul>
+<li>the component&#39;s <strong>lifecycle</strong></li>
+<li><strong>incoming</strong>/<strong>outcoming</strong> messages </li>
 </ul>
-<pre><code class="lang-json">{
-  "<span class="hljs-attribute">layout</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">width</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
-    "<span class="hljs-attribute">height</span>": <span class="hljs-value"><span class="hljs-number">1</span>
-  </span>}
-</span>}
-</code></pre>
-</div></section><section id="slide_24" class="slide"><div id="slide_24_wrap"><h2 id="new-slide">New Slide</h2>
+</li>
+</ul>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> reactive component&#39;s UI</p>
+</div></section><section id="slide_24" class="slide shout"><div id="slide_24_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_25" class="slide"><div id="slide_25_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+<ul style="margin: 0">
+  <li><strong>describe</strong> how component should <strong>render</strong></li>
+</ul>
+
+<pre style="margin-bottom: 10px">
+<code style="font-size: 16px; line-height: 20px"> {
+   "layout": {
+     "width": 2,
+     "height": 1
+   }
+ }</code>
+</pre>
+
+<ul style="margin: 0">
+  <li>define <strong>third-party</strong> scripts &amp; styles to load</li>
+</ul>
+
+<pre style="margin-bottom: 10px">
+<code style="font-size: 16px; line-height: 20px"> {
+   "styles": [ 'https://le-cdn.org/my-style.css' ],
+   "scripts": [ 'https://le-cdn.org/my-lib.js' ]
+ }</code>
+</pre>
+
+<ul style="margin: 0">
+  <li>list <strong>AngularJS</strong> modules to load</li>
+</ul>
+
+<pre style="margin-bottom: 10px">
+<code style="font-size: 16px; line-height: 20px"> { "ngModules": [ 'ui.bootstrap' ] }</code>
+</pre>
+</pre></div></section><section id="slide_26" class="slide"><div id="slide_26_wrap"><h2 id="-introducing-kevoreejs-in-the-browser"><strong>&gt;</strong> Introducing KevoreeJS in the Browser</h2>
+<p><img src="images/runjs.png" width="700px" style="margin-left: 50px" /></p>
+</div></section><section id="slide_27" class="slide shout"><div id="slide_27_wrap"><h2 id="-validation"><strong>&gt;</strong> Validation</h2>
+</div></section><section id="slide_28" class="slide"><div id="slide_28_wrap"><h2 id="new-slide">New Slide</h2>
 <ul>
 <li>your content here...</li>
 </ul>
