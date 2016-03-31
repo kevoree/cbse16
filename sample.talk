@@ -214,9 +214,9 @@ var Ticker = AbstractComponent.extend({
 [slide]
 ## **>** User-interface DSL
 
-* provide a way to **describe** how to **render**
-* **load third-party** scripts & styles
-* define the **meta-data** your UI **needs** in JSON
+* **describe** how component should **render**
+* define **third-party** scripts & styles to load
+* list **AngularJS** modules to load
 
 ```json
 {
@@ -226,3 +226,7 @@ var Ticker = AbstractComponent.extend({
   }
 }
 ```
+
+[slide]
+## New Slide
+ - your content here...
