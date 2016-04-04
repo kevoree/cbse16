@@ -105,9 +105,8 @@
 [slide]
 ## **>** Frontend libraries for SPA
  * **AngularJS** framework is made for Single-Page Application
- * ...
-
-// ok this slide might be too much
+ * Third-party libraries: **Gridster.js**, **Bootstrap**, **CodeMirror**, ...
+ * Use **iframes** to **sandbox** components code
 
 [slide shout]
 ## **>** Model@run.time
@@ -160,8 +159,8 @@
 :fa-arrow-circle-o-right: **proposition**: use modules as **standalone bundles** :fa-archive:
 
 [slide]
-## **>** What is a standalone bundle ?
-
+## **>** What is a Web bundler ?
+* tool such as **Browserify** or **WebPack**
 * takes modules with **dependencies** and generates **static assets**
 * using **transformations** to comply with Web browsers :fa-chrome: :fa-firefox: :fa-safari:
 * outputs :fa-file: **one single**  file
@@ -178,34 +177,44 @@
 
 ```js
 var ConsolePrinter = AbstractComponent.extend({
-  // naming convention "in_" is how you define an input port
   in_input: function (msg) {
 	  console.log('> '+msg);
   }
 });
 ```
-
-// might gonna need to present Kevoree a bit before saying this  
-// or do not show code but explain with words how contracts are made
+* you define an **input** port using the naming convention **in_**
 
 [slide]
 ## **>** Contract-aware components
 
+* use of **Kevoree** to define **contracts**
 
+```java
+@Component
+public class ConsolePrinter {
+  @Input
+  public void input(String message) {
+	System.out.println('> ' + message);
+  }
+}
+```
 
-```js
-var Ticker = AbstractComponent.extend({
-  // this method is called on start-up
-  start: function () {
-    var self = this;
-    setTimeout(function () {
-	    // sends random number on output port every 2 seconds
-	    self.out_tick(Math.random()*100));
-    }, 2000);
-  },
+* in **Java** or **TypeScript**, you define **inputs** using the **@Input** annotation
 
-  out_tick: function (msg) { /* redefined at runtime */ }
-});
+[slide]
+## **>** Contract-aware components
+
+* define **parameters**
+```java
+        @Param
+    private String myParam;
+```
+* provide **lifecycle** methods:
+```java
+        @Start
+    public void start() {
+	  // this will be executed when the component as to start
+    }
 ```
 
 [slide]
@@ -228,7 +237,6 @@ var Ticker = AbstractComponent.extend({
 [slide]
 ## **>** Component UI: AngularJS
 
-* **classic** AngularJS usage
 * every component defines a :fa-cog: **controller** which is bound to the :fa-eye: **view**
 * so the view can **adapt** according to:
  *  the component's **lifecycle**
@@ -281,8 +289,51 @@ var Ticker = AbstractComponent.extend({
 <img src="$ROOT/images/runjs.png" width="700px" style="margin-left: 50px" />
 
 [slide shout]
-## **>** Validation
+## **>** Evaluation
 
 [slide]
-## New Slide
- - todo
+## Evaluation
+
+> what is the **overhead** brought by our approach in terms of:  
+>  **LoC**  
+>  **reusable components**  
+>  **time penalty**  
+
+:fa-arrow-circle-o-right: create a **sensor-based dashboard** using KevoreeJS
+
+[slide]
+## Evaluation
+
+**LoC**  
+
+* KevoreeJS core: **56,671** LoC 
+ * :fa-pencil: 15,584 are **hand-written**
+ * the rest is **generated** by Kevoree
+ * based on the **meta-model**
+
+[slide]
+## Evaluation
+
+**Reusable components**  
+
+* to create the **sensor-based dashboard** we've created:
+ * **8** components
+ * **3** channels
+ * **3** groups
+* all those components are **published** & **free** and can be re-used by **anyone**
+
+[slide]
+## Evaluation
+
+**Time penalty**  
+
+* starting the **sensor-based dashboard** took
+* less than **2 seconds**
+* from scratch on a ** i7**,  **16Gb** and **SSD**
+* and **677ms** once components **cached**
+
+:fa-arrow-circle-o-right: the **main time :fa-clock-o: consuming**  action is component downloading
+
+[slide shout]
+## **>** Thank you
+<h2 style="font-size: 60px; margin-top: 150px">Questions <span class="kevOrange fa fa-question-circle"></span></h2>

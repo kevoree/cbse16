@@ -546,7 +546,7 @@ a {
   margin: 0;
   size: 1024px 640px; }
 </style>
-  <style>/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+	<style>/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
 /* Tomorrow Comment */
 .hljs-comment {
@@ -2672,8 +2672,11 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 }
 </style>
 </head>
+
 <body class="list">
-	<script>window.selectedSlideIndex = 0;</script>
+	<script>
+		window.selectedSlideIndex = 0;
+	</script>
 
 	<section id="slide_0" class="slide cover"><div id="slide_0_wrap"><p><img src="images/cover_pimped.png" alt=""></p>
 <style>
@@ -2681,7 +2684,9 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
       line-height: 30px;
         font-size: 20px;
     }
-</style></div></section><section id="slide_1" class="slide"><div id="slide_1_wrap"><h2 id="about-us">About us</h2>
+</style>
+
+</div></section><section id="slide_1" class="slide"><div id="slide_1_wrap"><h2 id="about-us">About us</h2>
 <blockquote>
 <p> <strong>HEADS Project</strong><br><em>European Union Seventh Framework Program (FP7/2007-2013)</em></p>
 </blockquote>
@@ -2760,9 +2765,9 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </div></section><section id="slide_13" class="slide"><div id="slide_13_wrap"><h2 id="-frontend-libraries-for-spa"><strong>&gt;</strong> Frontend libraries for SPA</h2>
 <ul>
 <li><strong>AngularJS</strong> framework is made for Single-Page Application</li>
-<li>...</li>
+<li>Third-party libraries: <strong>Gridster.js</strong>, <strong>Bootstrap</strong>, <strong>CodeMirror</strong>, ...</li>
+<li>Use <strong>iframes</strong> to <strong>sandbox</strong> components code</li>
 </ul>
-<p>// ok this slide might be too much</p>
 </div></section><section id="slide_14" class="slide shout"><div id="slide_14_wrap"><h2 id="-model-run-time"><strong>&gt;</strong> Model@run.time</h2>
 </div></section><section id="slide_15" class="slide"><div id="slide_15_wrap"><h2 id="-the-model-run-time-paradigm"><strong>&gt;</strong> The model@run.time paradigm</h2>
 <ul>
@@ -2798,8 +2803,9 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>the more dependencies they have the bigger the graph gets</li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>proposition</strong>: use modules as <strong>standalone bundles</strong> <span class="kevOrange kevIcon fa fa-archive"></span></p>
-</div></section><section id="slide_19" class="slide"><div id="slide_19_wrap"><h2 id="-what-is-a-standalone-bundle-"><strong>&gt;</strong> What is a standalone bundle ?</h2>
+</div></section><section id="slide_19" class="slide"><div id="slide_19_wrap"><h2 id="-what-is-a-web-bundler-"><strong>&gt;</strong> What is a Web bundler ?</h2>
 <ul>
+<li>tool such as <strong>Browserify</strong> or <strong>WebPack</strong></li>
 <li>takes modules with <strong>dependencies</strong> and generates <strong>static assets</strong></li>
 <li>using <strong>transformations</strong> to comply with Web browsers <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span></li>
 <li>outputs <span class="kevOrange kevIcon fa fa-file"></span> <strong>one single</strong>  file</li>
@@ -2811,40 +2817,54 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>use of <strong>Kevoree</strong> to define <strong>contracts</strong></li>
 </ul>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> ConsolePrinter = AbstractComponent.extend({
-  <span class="hljs-comment">// naming convention "in_" is how you define an input port</span>
   in_input: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg</span>) </span>{
       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'&gt; '</span>+msg);
   }
 });
 </code></pre>
-<p>// might gonna need to present Kevoree a bit before saying this<br>// or do not show code but explain with words how contracts are made</p>
+<ul>
+<li>you define an <strong>input</strong> port using the naming convention <strong>in_</strong></li>
+</ul>
 </div></section><section id="slide_22" class="slide"><div id="slide_22_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> Ticker = AbstractComponent.extend({
-  <span class="hljs-comment">// this method is called on start-up</span>
-  start: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
-    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-        <span class="hljs-comment">// sends random number on output port every 2 seconds</span>
-        self.out_tick(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">100</span>));
-    }, <span class="hljs-number">2000</span>);
-  },
-
-  out_tick: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg</span>) </span>{ <span class="hljs-comment">/* redefined at runtime */</span> }
-});
+<ul>
+<li>use of <strong>Kevoree</strong> to define <strong>contracts</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-annotation">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsolePrinter</span> </span>{
+  <span class="hljs-annotation">@Input</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">input</span><span class="hljs-params">(String message)</span> </span>{
+    System.out.println(<span class="hljs-string">'&gt; '</span> + message);
+  }
+}
 </code></pre>
+<ul>
+<li>in <strong>Java</strong> or <strong>TypeScript</strong>, you define <strong>inputs</strong> using the <strong>@Input</strong> annotation</li>
+</ul>
 </div></section><section id="slide_23" class="slide"><div id="slide_23_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
+<ul>
+<li>define <strong>parameters</strong><pre><code class="lang-java">      <span class="hljs-annotation">@Param</span>
+  <span class="hljs-keyword">private</span> String myParam;
+</code></pre>
+</li>
+<li>provide <strong>lifecycle</strong> methods:<pre><code class="lang-java">      <span class="hljs-annotation">@Start</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// this will be executed when the component as to start</span>
+  }
+</code></pre>
+</li>
+</ul>
+</div></section><section id="slide_24" class="slide"><div id="slide_24_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <p><img src="images/editor.png" height="400px" style="position: absolute; left: 200px" /></p>
-</div></section><section id="slide_24" class="slide shout"><div id="slide_24_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
-</div></section><section id="slide_25" class="slide"><div id="slide_25_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
+</div></section><section id="slide_25" class="slide shout"><div id="slide_25_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+</div></section><section id="slide_26" class="slide"><div id="slide_26_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
 <ul>
 <li><strong>AngularJS</strong> is developped by <strong>Google</strong></li>
 <li><strong>widely</strong> used front-end <strong>framework</strong></li>
 <li>gives <strong>2-way data-binding</strong> between HTML <span class="kevOrange kevIcon fa fa-arrows-h"></span> JavaScript model</li>
 </ul>
-<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies  </p>
-</div></section><section id="slide_26" class="slide"><div id="slide_26_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies</p>
+</div></section><section id="slide_27" class="slide"><div id="slide_27_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
 <ul>
-<li><strong>classic</strong> AngularJS usage</li>
 <li>every component defines a <span class="kevOrange kevIcon fa fa-cog"></span> <strong>controller</strong> which is bound to the <span class="kevOrange kevIcon fa fa-eye"></span> <strong>view</strong></li>
 <li>so the view can <strong>adapt</strong> according to:<ul>
 <li>the component&#39;s <strong>lifecycle</strong></li>
@@ -2853,8 +2873,8 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> reactive component&#39;s UI</p>
-</div></section><section id="slide_27" class="slide shout"><div id="slide_27_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
-</div></section><section id="slide_28" class="slide"><div id="slide_28_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_28" class="slide shout"><div id="slide_28_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_29" class="slide"><div id="slide_29_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
 <ul style="margin: 0">
   <li><strong>describe</strong> how component should <strong>render</strong></li>
 </ul>
@@ -2886,42 +2906,75 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <pre style="margin-bottom: 10px">
 <code style="font-size: 16px; line-height: 20px"> { "ngModules": [ 'ui.bootstrap' ] }</code>
 </pre>
-</pre></div></section><section id="slide_29" class="slide"><div id="slide_29_wrap"><h2 id="-introducing-kevoreejs-in-the-browser"><strong>&gt;</strong> Introducing KevoreeJS in the Browser</h2>
+</pre>
+
+</div></section><section id="slide_30" class="slide"><div id="slide_30_wrap"><h2 id="-introducing-kevoreejs-in-the-browser"><strong>&gt;</strong> Introducing KevoreeJS in the Browser</h2>
 <p><img src="images/runjs.png" width="700px" style="margin-left: 50px" /></p>
-</div></section><section id="slide_30" class="slide shout"><div id="slide_30_wrap"><h2 id="-validation"><strong>&gt;</strong> Validation</h2>
-</div></section><section id="slide_31" class="slide"><div id="slide_31_wrap"><h2 id="new-slide">New Slide</h2>
+</div></section><section id="slide_31" class="slide shout"><div id="slide_31_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
+</div></section><section id="slide_32" class="slide"><div id="slide_32_wrap"><h2 id="evaluation">Evaluation</h2>
+<blockquote>
+<p>what is the <strong>overhead</strong> brought by our approach in terms of:<br> <strong>LoC</strong><br> <strong>reusable components</strong><br> <strong>time penalty</strong>  </p>
+</blockquote>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> create a <strong>sensor-based dashboard</strong> using KevoreeJS</p>
+</div></section><section id="slide_33" class="slide"><div id="slide_33_wrap"><h2 id="evaluation">Evaluation</h2>
+<p><strong>LoC</strong>  </p>
 <ul>
-<li>todo</li>
+<li>KevoreeJS core: <strong>56,671</strong> LoC <ul>
+<li><span class="kevOrange kevIcon fa fa-pencil"></span> 15,584 are <strong>hand-written</strong></li>
+<li>the rest is <strong>generated</strong> by Kevoree</li>
+<li>based on the <strong>meta-model</strong></li>
 </ul>
-</div></section>
+</li>
+</ul>
+</div></section><section id="slide_34" class="slide"><div id="slide_34_wrap"><h2 id="evaluation">Evaluation</h2>
+<p><strong>Reusable components</strong>  </p>
+<ul>
+<li>to create the <strong>sensor-based dashboard</strong> we&#39;ve created:<ul>
+<li><strong>8</strong> components</li>
+<li><strong>3</strong> channels</li>
+<li><strong>3</strong> groups</li>
+</ul>
+</li>
+<li>all those components are <strong>published</strong> &amp; <strong>free</strong> and can be re-used by <strong>anyone</strong></li>
+</ul>
+</div></section><section id="slide_35" class="slide"><div id="slide_35_wrap"><h2 id="evaluation">Evaluation</h2>
+<p><strong>Time penalty</strong>  </p>
+<ul>
+<li>starting the <strong>sensor-based dashboard</strong> took</li>
+<li>less than <strong>2 seconds</strong></li>
+<li>from scratch on a <strong> i7</strong>,  <strong>16Gb</strong> and <strong>SSD</strong></li>
+<li>and <strong>677ms</strong> once components <strong>cached</strong></li>
+</ul>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> the <strong>main time <span class="kevOrange kevIcon fa fa-clock-o"></span> consuming</strong>  action is component downloading</p>
+</div></section><section id="slide_36" class="slide shout"><div id="slide_36_wrap"><h2 id="-thank-you"><strong>&gt;</strong> Thank you</h2>
+<h2 style="font-size: 60px; margin-top: 150px">Questions <span class="kevOrange fa fa-question-circle"></span></h2></div></section>
 
-	<div class="progress"><div></div></div>
+	<div class="progress">
+		<div></div>
+	</div>
 	<script>
-	window.ondragover = function(e) { e.preventDefault(); return false };
-	window.ondrop = function(e) { e.preventDefault(); return false };
+		window.ondragover = function(e) {
+			e.preventDefault();
+			return false
+		};
+		window.ondrop = function(e) {
+			e.preventDefault();
+			return false
+		};
 
-		/*
-	  function refreshView(content){
+		function forceSlideMode() {
 			var selfShower = shower;
-			window.requestAnimationFrame(function(){
-				document.getElementById('allSlides').innerHTML = content;
-				shower.slideList = [];
-				shower.init().run();
-			});
-		}
-		*/
-		function forceSlideMode(){
-			var selfShower = shower;
-			window.requestAnimationFrame(function(){
-				if (!selfShower.isSlideMode()){
+			window.requestAnimationFrame(function() {
+				if (!selfShower.isSlideMode()) {
 					selfShower.toggleMode();
 				}
 			});
 		}
-	  function getCurrentSlide(){
+
+		function getCurrentSlide() {
 			return shower.getCurrentSlideNumber();
 		}
-  </script>
+	</script>
 	<script>/**
  * Core for Shower HTML presentation engine, https://github.com/shower/core
  * @copyright 2010–2014 Vadim Makeev, http://pepelsbey.net
@@ -4004,4 +4057,5 @@ window.shower = (function(window, document, undefined) {
 }
 </script>
 </body>
+
 </html>
