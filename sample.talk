@@ -292,7 +292,7 @@ public class ConsolePrinter {
 ## **>** Evaluation
 
 [slide]
-## Evaluation
+## **>** Evaluation
 
 > what is the **overhead** brought by our approach in terms of:  
 >  **LoC**  
@@ -302,7 +302,7 @@ public class ConsolePrinter {
 :fa-arrow-circle-o-right: create a **sensor-based dashboard** using KevoreeJS
 
 [slide]
-## Evaluation
+## **>** Evaluation
 
 **LoC**  
 
@@ -312,7 +312,7 @@ public class ConsolePrinter {
  * based on the **meta-model**
 
 [slide]
-## Evaluation
+## **>** Evaluation
 
 **Reusable components**  
 
@@ -323,7 +323,7 @@ public class ConsolePrinter {
 * all those components are **published** & **free** and can be re-used by **anyone**
 
 [slide]
-## Evaluation
+## **>** Evaluation
 
 **Time penalty**  
 
@@ -333,6 +333,16 @@ public class ConsolePrinter {
 * and **677ms** once components **cached**
 
 :fa-arrow-circle-o-right: the **main time :fa-clock-o: consuming**  action is component downloading
+
+[slide]
+## **>** Conclusion
+
+ * wa have created a  **component-based** platform
+ * that can adapt **at runtime**
+ * according to a **configuration model**
+ * within a **Web browser**
+
+:fa-arrow-circle-o-right: available at http://runjs.kevoree.org
 
 [slide shout]
 ## **>** Thank you
