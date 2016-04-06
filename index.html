@@ -2686,50 +2686,26 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
     }
 </style>
 
-</div></section><section id="slide_1" class="slide"><div id="slide_1_wrap"><h2 id="about-us">About us</h2>
-<blockquote>
-<p> <strong>HEADS Project</strong><br><em>European Union Seventh Framework Program (FP7/2007-2013)</em></p>
-</blockquote>
+<p><span style="color: white;position: absolute; bottom: 5px; right: 20px"><strong style="color: white">Maxime Tricoire</strong> - <em style="color: white; font-weight: normal">Research engineer, INRIA,  France</em></span></p>
+</div></section><section id="slide_1" class="slide shout"><div id="slide_1_wrap"><h2 id="-motivation"><strong>&gt;</strong> Motivation</h2>
+</div></section><section id="slide_2" class="slide"><div id="slide_2_wrap"><h2 id="-why-single-page-application"><strong>&gt;</strong> Why Single-Page Application</h2>
 <ul>
-<li><em>Authors</em><ul>
-<li><strong>M.Tricoire</strong>, <strong>O.Barais</strong>, <strong>M.Leduc</strong>, <strong>Y.Bourcier</strong>
-<em>INRIA, IRISA, University of Rennes 1, Rennes, France</em></li>
-<li><strong>F.Fouquet</strong>, <strong>G.Nain</strong>, <strong>L.Mouline</strong> <em>SnT, Luxembourg</em></li>
-<li><strong>G.Sunyé</strong> <em>University of Nantes, France</em></li>
-<li><strong>B.Morin</strong> <em>SINTEF, Oslo, Norway</em></li>
+<li>software is moving from:<ul>
+<li>traditional <span class="kevOrange kevIcon fa fa-desktop"></span> <strong>desktop-based</strong> applications</li>
+<li>to <strong>client-server</strong> architectures hosted in the <strong>cloud</strong> <span class="kevOrange kevIcon fa fa-cloud"></span></li>
 </ul>
 </li>
 </ul>
-</div></section><section id="slide_2" class="slide"><div id="slide_2_wrap"><h2 id="overview">Overview</h2>
+<p><img src="images/gmail.png" width="400px" style="position: absolute; top: 360px; left: 100px"/>
+<img src="images/c9.png" width="375px" style="position: absolute; top: 360px; left: 550px;"/></p>
+</div></section><section id="slide_3" class="slide"><div id="slide_3_wrap"><h2 id="-why-single-page-application"><strong>&gt;</strong> Why Single-Page Application</h2>
 <ul>
-<li><span style="font-weight: bold">Motivation</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>why</strong> do we need <em>dynamically reconfigurable architectures</em> for SPAs</li>
-<li><span style="font-weight: bold">Idea</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>what</strong>  we want to achieve with our approach</li>
-<li><span style="font-weight: bold">Proposition</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>how</strong> we propose to enable this idea</li>
-<li><span style="font-weight: bold">Validation</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>how</strong> does this approach performs?</li>
+<li>SPAs are the new desktop applications<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>fit</strong> on a single web page<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> provide a <strong>fluid</strong> user experience  by <strong>avoiding</strong> page reloads</li>
 </ul>
-</div></section><section id="slide_3" class="slide shout"><div id="slide_3_wrap"><h2 id="-motivation"><strong>&gt;</strong> Motivation</h2>
+<ul>
+<li><strong>But</strong>, unlike well-known desktop applications such as <em>Eclipse</em><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> no <span class="kevOrange kevIcon fa fa-plug"></span> <strong>pluggable</strong> architecture <strong>pattern</strong> frameworks<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> no <strong>dynamic</strong> component loading <strong>at runtime</strong></li>
+</ul>
 </div></section><section id="slide_4" class="slide"><div id="slide_4_wrap"><h2 id="-why-single-page-application"><strong>&gt;</strong> Why Single-Page Application</h2>
-<ul>
-<li>software are moving from:<ul>
-<li>traditional <span class="kevOrange kevIcon fa fa-desktop"></span> desktop-based applications</li>
-<li>to client-server architectures hosted in the cloud <span class="kevOrange kevIcon fa fa-cloud"></span></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Web browsers <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span> behave as application containers<ul>
-<li>E-mail clients, Word processors,  Music Collection Managers, IDEs, ...</li>
-</ul>
-</li>
-</ul>
-</div></section><section id="slide_5" class="slide"><div id="slide_5_wrap"><h2 id="-why-single-page-application"><strong>&gt;</strong> Why Single-Page Application</h2>
-<ul>
-<li>SPAs are the new desktop applications<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>fit</strong> on a single web page<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> provide a <strong>fluid</strong> user experience  by avoiding page reloads</li>
-</ul>
-<ul>
-<li><strong>But</strong>, unlike well-known desktop applications such as <em>Eclipse</em><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> no <span class="kevOrange kevIcon fa fa-plug"></span> pluggable architecture pattern frameworks<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> no <strong>dynamic</strong> component loading <strong>at runtime</strong></li>
-</ul>
-</div></section><section id="slide_6" class="slide"><div id="slide_6_wrap"><h2 id="-why-single-page-application"><strong>&gt;</strong> Why Single-Page Application</h2>
 <blockquote>
 <p>Challenges</p>
 </blockquote>
@@ -2739,14 +2715,20 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>according to a <strong>configuration model</strong></li>
 <li>within a <strong>Web browser</strong></li>
 </ul>
-</div></section><section id="slide_7" class="slide shout"><div id="slide_7_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
-</div></section><section id="slide_8" class="slide"><div id="slide_8_wrap"><h2 id="-drive-the-architecture-of-an-spa-using-model-run-time-"><strong>Drive</strong> the architecture of an <strong>SPA</strong> using <strong>model@run.time</strong></h2>
+</div></section><section id="slide_5" class="slide shout"><div id="slide_5_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
+</div></section><section id="slide_6" class="slide"><div id="slide_6_wrap"><h2 id="-drive-the-architecture-of-an-spa-using-model-run-time-"><strong>Drive</strong> the architecture of an <strong>SPA</strong> using <strong>model@run.time</strong></h2>
 <p><img src="images/server.png" width="150px" style="position:absolute; top: 300px"/>
 <span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 300px"></span>
 <img src="images/modeling_space_graph.jpg" width="100px" style="position:absolute; top: 300px; left: 400px"/>
 <span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 560px"></span>
 <img src="images/devices.png" width="200px" style="position:absolute; top: 300px; right: 150px"/></p>
-</div></section><section id="slide_9" class="slide"><div id="slide_9_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
+<p><span class="kevOrange" style="position: absolute; top: 450px; left: 135px">server-side<span>
+<span class="kevOrange" style="margin-left: 125px">object graph<span>
+<span class="kevOrange"style="margin-left: 205px">client-side<span></p>
+<div style="width: 430px; height: 250px; position: absolute; left: 100px; border: 6px solid #DF9D00; border-radius: 20px"></div>
+<div style="width: 530px; height: 230px; position: absolute; top:265px; left: 365px; border: 6px dotted #DF9D00; border-radius: 20px"></div>
+
+</div></section><section id="slide_7" class="slide"><div id="slide_7_wrap"><h2 id="-idea"><strong>&gt;</strong> Idea</h2>
 <ul>
 <li>Single-Page Application <strong>container</strong></li>
 <li>that leverages <strong>models@run.time</strong> to provide <strong>distribution</strong> and <strong>adaptability</strong> </li>
@@ -2754,31 +2736,15 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>provides a <strong>composable</strong> user-interface <strong>dashboard</strong> <span class="kevOrange kevIcon fa fa-desktop"></span></li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>everything from a Web browser</strong> without page reloads</p>
-</div></section><section id="slide_10" class="slide shout"><div id="slide_10_wrap"><h2 id="-proposition"><strong>&gt;</strong> Proposition</h2>
-</div></section><section id="slide_11" class="slide"><div id="slide_11_wrap"><h2 id="-proposition-enablers"><strong>&gt;</strong> Proposition enablers</h2>
-<ul>
-<li><strong>Frontend</strong> libraries to create an SPA</li>
-<li><strong>Kevoree</strong> to manage <strong>model@run.time</strong></li>
-<li>module <strong>bundlers</strong> to create standalone component</li>
-<li><strong>contract-aware components</strong> using Kevoree</li>
-<li>user-interface <strong>DSL</strong> to manage component <strong>layout</strong></li>
-</ul>
-</div></section><section id="slide_12" class="slide shout"><div id="slide_12_wrap"><h2 id="-frontend-libraries"><strong>&gt;</strong> Frontend libraries</h2>
-</div></section><section id="slide_13" class="slide"><div id="slide_13_wrap"><h2 id="-frontend-libraries-for-spa"><strong>&gt;</strong> Frontend libraries for SPA</h2>
-<ul>
-<li><strong>AngularJS</strong> framework is made for Single-Page Application</li>
-<li>Third-party libraries: <strong>Gridster.js</strong>, <strong>Bootstrap</strong>, <strong>CodeMirror</strong>, ...</li>
-<li>Use <strong>iframes</strong> to <strong>sandbox</strong> components code</li>
-</ul>
-</div></section><section id="slide_14" class="slide shout"><div id="slide_14_wrap"><h2 id="-model-run-time"><strong>&gt;</strong> Model@run.time</h2>
-</div></section><section id="slide_15" class="slide"><div id="slide_15_wrap"><h2 id="-the-model-run-time-paradigm"><strong>&gt;</strong> The model@run.time paradigm</h2>
+</div></section><section id="slide_8" class="slide shout"><div id="slide_8_wrap"><h2 id="-model-run-time"><strong>&gt;</strong> Model@run.time</h2>
+</div></section><section id="slide_9" class="slide"><div id="slide_9_wrap"><h2 id="-the-model-run-time-paradigm"><strong>&gt;</strong> The model@run.time paradigm</h2>
 <ul>
 <li>extends the usage of <strong>models</strong> to the <strong>runtime environment</strong></li>
 <li>models@run.time are <strong>continuously updated</strong> to reflect the state of a system during its <strong>execution (runtime)</strong></li>
 <li>the goal is to manage the complexity of <strong>adaptive software systems</strong></li>
 <li>often <strong>runtime models</strong> are used to support <strong>decision-making</strong> and <strong>reasoning processes</strong> of self-adaptive systems</li>
 </ul>
-</div></section><section id="slide_16" class="slide"><div id="slide_16_wrap"><h2 id="-model-run-time-with-kevoree"><strong>&gt;</strong> Model@run.time with Kevoree</h2>
+</div></section><section id="slide_10" class="slide"><div id="slide_10_wrap"><h2 id="-model-run-time-with-kevoree"><strong>&gt;</strong> Model@run.time with Kevoree</h2>
 <div style="position: absolute; top: 180px; bottom: 20px; left: 50px; width: 45%; font-size: 18px;">
   <span style="font-size: 24px"><strong>meta-model (static)</strong></span><br>    <span style="font-size: 18px">defined as <em>EMF/Ecore, UML, DSL, ...</em></span><br>    <span style="font-size: 18px">purpose: <strong>domain definition</strong></span><br>    <div style="margin-left: 20px">
       <img src="images/model.png" width="60%"/>
@@ -2796,16 +2762,16 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
     </div>
 </div>
 
-</div></section><section id="slide_17" class="slide shout"><div id="slide_17_wrap"><h2 id="-component-bundles"><strong>&gt;</strong> Component bundles</h2>
-</div></section><section id="slide_18" class="slide"><div id="slide_18_wrap"><h2 id="-component-bundles"><strong>&gt;</strong> Component bundles</h2>
+</div></section><section id="slide_11" class="slide shout"><div id="slide_11_wrap"><h2 id="-component-bundles"><strong>&gt;</strong> Component bundles</h2>
+</div></section><section id="slide_12" class="slide"><div id="slide_12_wrap"><h2 id="-component-bundles"><strong>&gt;</strong> Component bundles</h2>
 <ul>
-<li><strong>server-side</strong> modules use <strong>CommonJS</strong> (Node.js)</li>
+<li><strong>server-side</strong> (Node.js) modules use <strong>CommonJS</strong></li>
+<li>which is <strong>not</strong> the standard for <strong>Web browsers</strong> <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span></li>
 <li>are meant to be <strong>split</strong> in a multitude of sub-modules (dependencies)</li>
-<li>CommonJS is <strong>not</strong> the standard for <strong>Web browsers</strong> <span class="kevOrange kevIcon fa fa-chrome"></span> <span class="kevOrange kevIcon fa fa-firefox"></span> <span class="kevOrange kevIcon fa fa-safari"></span></li>
 <li>the more dependencies they have the bigger the graph gets</li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>proposition</strong>: use modules as <strong>standalone bundles</strong> <span class="kevOrange kevIcon fa fa-archive"></span></p>
-</div></section><section id="slide_19" class="slide"><div id="slide_19_wrap"><h2 id="-what-is-a-web-bundler-"><strong>&gt;</strong> What is a Web bundler ?</h2>
+</div></section><section id="slide_13" class="slide"><div id="slide_13_wrap"><h2 id="-what-is-a-web-bundler-"><strong>&gt;</strong> What is a Web bundler ?</h2>
 <ul>
 <li>tool such as <strong>Browserify</strong> or <strong>WebPack</strong></li>
 <li>takes modules with <strong>dependencies</strong> and generates <strong>static assets</strong></li>
@@ -2813,8 +2779,8 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>outputs <span class="kevOrange kevIcon fa fa-file"></span> <strong>one single</strong>  file</li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> using bundles <strong>narrows</strong> the download <strong>down to one</strong> request per component</p>
-</div></section><section id="slide_20" class="slide shout"><div id="slide_20_wrap"><h2 id="-contract-aware"><strong>&gt;</strong> Contract-aware</h2>
-</div></section><section id="slide_21" class="slide"><div id="slide_21_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
+</div></section><section id="slide_14" class="slide shout"><div id="slide_14_wrap"><h2 id="-contract-aware"><strong>&gt;</strong> Contract-aware</h2>
+</div></section><section id="slide_15" class="slide"><div id="slide_15_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <ul>
 <li>use of <strong>Kevoree</strong> to define <strong>contracts</strong></li>
 </ul>
@@ -2827,7 +2793,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <ul>
 <li>you define an <strong>input</strong> port using the naming convention <strong>in_</strong></li>
 </ul>
-</div></section><section id="slide_22" class="slide"><div id="slide_22_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
+</div></section><section id="slide_16" class="slide"><div id="slide_16_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <ul>
 <li>use of <strong>Kevoree</strong> to define <strong>contracts</strong></li>
 </ul>
@@ -2842,7 +2808,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <ul>
 <li>in <strong>Java</strong> or <strong>TypeScript</strong>, you define <strong>inputs</strong> using the <strong>@Input</strong> annotation</li>
 </ul>
-</div></section><section id="slide_23" class="slide"><div id="slide_23_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
+</div></section><section id="slide_17" class="slide"><div id="slide_17_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <ul>
 <li>define <strong>parameters</strong><pre><code class="lang-java">      <span class="hljs-annotation">@Param</span>
   <span class="hljs-keyword">private</span> String myParam;
@@ -2855,10 +2821,8 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </code></pre>
 </li>
 </ul>
-</div></section><section id="slide_24" class="slide"><div id="slide_24_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
-<p><img src="images/editor.png" height="400px" style="position: absolute; left: 200px" /></p>
-</div></section><section id="slide_25" class="slide shout"><div id="slide_25_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
-</div></section><section id="slide_26" class="slide"><div id="slide_26_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+</div></section><section id="slide_18" class="slide shout"><div id="slide_18_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+</div></section><section id="slide_19" class="slide"><div id="slide_19_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
 <ul>
 <li>opinionated: <strong>AngularJS</strong></li>
 <li>every component defines a <span class="kevOrange kevIcon fa fa-cog"></span> <strong>controller</strong> which is bound to the <span class="kevOrange kevIcon fa fa-eye"></span> <strong>view</strong></li>
@@ -2869,7 +2833,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>reactive</strong> component&#39;s UI</p>
-</div></section><section id="slide_27" class="slide"><div id="slide_27_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+</div></section><section id="slide_20" class="slide"><div id="slide_20_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
 <pre><code class="lang-js"><span class="hljs-comment">// UI controller inside a component: ConsolePrinter.js</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$scope, instance</span>) </span>{
   <span class="hljs-comment">// instance is the reference to the running component</span>
@@ -2881,15 +2845,15 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
   };
 }
 </code></pre>
-</div></section><section id="slide_28" class="slide"><div id="slide_28_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+</div></section><section id="slide_21" class="slide"><div id="slide_21_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
 <pre><code class="lang-html"><span class="hljs-comment">// Component view: console-printer.html</span>
 &lt;ul&gt;
   &lt;li ng-repeat="msg in messages"&gt;{{ msg }}&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
 <p><img src="images/console_printer.png" width="350px" style="position: absolute; top: 320px; left: 300px;"/></p>
-</div></section><section id="slide_29" class="slide shout"><div id="slide_29_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
-</div></section><section id="slide_30" class="slide"><div id="slide_30_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_22" class="slide shout"><div id="slide_22_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_23" class="slide"><div id="slide_23_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
 <ul style="margin: 0">
   <li><strong>describe</strong> how component should <strong>render</strong></li>
 </ul>
@@ -2923,45 +2887,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </pre>
 </pre>
 
-</div></section><section id="slide_31" class="slide"><div id="slide_31_wrap"><h2 id="-introducing-kevoreejs-in-the-browser"><strong>&gt;</strong> Introducing KevoreeJS in the Browser</h2>
-<p><img src="images/runjs.png" width="700px" style="margin-left: 50px" /></p>
-</div></section><section id="slide_32" class="slide shout"><div id="slide_32_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
-</div></section><section id="slide_33" class="slide"><div id="slide_33_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
-<blockquote>
-<p>what is the <strong>overhead</strong> brought by our approach in terms of:<br> <strong>LoC</strong><br> <strong>reusable components</strong><br> <strong>time penalty</strong>  </p>
-</blockquote>
-<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> create a <strong>sensor-based dashboard</strong> using KevoreeJS</p>
-</div></section><section id="slide_34" class="slide"><div id="slide_34_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
-<p><strong>LoC</strong>  </p>
-<ul>
-<li>KevoreeJS core: <strong>56,671</strong> LoC <ul>
-<li><span class="kevOrange kevIcon fa fa-pencil"></span> 15,584 are <strong>hand-written</strong></li>
-<li>the rest is <strong>generated</strong> by Kevoree</li>
-<li>based on the <strong>meta-model</strong></li>
-</ul>
-</li>
-</ul>
-</div></section><section id="slide_35" class="slide"><div id="slide_35_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
-<p><strong>Reusable components</strong>  </p>
-<ul>
-<li>to create the <strong>sensor-based dashboard</strong> we&#39;ve created:<ul>
-<li><strong>8</strong> components</li>
-<li><strong>3</strong> channels</li>
-<li><strong>3</strong> groups</li>
-</ul>
-</li>
-<li>all those components are <strong>published</strong> &amp; <strong>free</strong> and can be re-used by <strong>anyone</strong></li>
-</ul>
-</div></section><section id="slide_36" class="slide"><div id="slide_36_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
-<p><strong>Time penalty</strong>  </p>
-<ul>
-<li>starting the <strong>sensor-based dashboard</strong> took</li>
-<li>less than <strong>2 seconds</strong></li>
-<li>from scratch on a <strong> i7</strong>,  <strong>16Gb</strong> and <strong>SSD</strong></li>
-<li>and <strong>677ms</strong> once components <strong>cached</strong></li>
-</ul>
-<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> the <strong>main time <span class="kevOrange kevIcon fa fa-clock-o"></span> consuming</strong>  action is component downloading</p>
-</div></section><section id="slide_37" class="slide"><div id="slide_37_wrap"><h2 id="-conclusion"><strong>&gt;</strong> Conclusion</h2>
+</div></section><section id="slide_24" class="slide"><div id="slide_24_wrap"><h2 id="-conclusion"><strong>&gt;</strong> Conclusion</h2>
 <ul>
 <li>we have created a  <strong>component-based</strong> platform</li>
 <li>that can adapt <strong>at runtime</strong></li>
@@ -2969,7 +2895,9 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>within a <strong>Web browser</strong></li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> available at <a href="http://runjs.kevoree.org">http://runjs.kevoree.org</a></p>
-</div></section><section id="slide_38" class="slide shout"><div id="slide_38_wrap"><h2 id="-thank-you"><strong>&gt;</strong> Thank you</h2>
+</div></section><section id="slide_25" class="slide"><div id="slide_25_wrap"><h2 id="-demo"><strong>&gt;</strong> Demo</h2>
+<p><img src="images/runjs.png" width="700px" style="margin-left: 50px" /></p>
+</div></section><section id="slide_26" class="slide shout"><div id="slide_26_wrap"><h2 id="-thank-you"><strong>&gt;</strong> Thank you</h2>
 <h2 style="font-size: 60px; margin-top: 150px">Questions <span class="kevOrange fa fa-question-circle"></span></h2>
 
 </div></section>

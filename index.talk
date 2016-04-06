@@ -8,53 +8,29 @@
 	}
 </style>
 
-[slide]
-## About us
-
->  **HEADS Project**  
-> *European Union Seventh Framework Program (FP7/2007-2013)*
-
-- *Authors*
- - **M.Tricoire**, **O.Barais**, **M.Leduc**, **Y.Bourcier**
-   *INRIA, IRISA, University of Rennes 1, Rennes, France*
- - **F.Fouquet**, **G.Nain**, **L.Mouline** *SnT, Luxembourg*
- - **G.Sunyé** *University of Nantes, France*
- - **B.Morin** *SINTEF, Oslo, Norway*
-
-[slide]
-## Overview
-
-* <span style="font-weight: bold">Motivation</span>  
- :fa-arrow-circle-o-right: **why** do we need *dynamically reconfigurable architectures* for SPAs
-* <span style="font-weight: bold">Idea</span>  
- :fa-arrow-circle-o-right: **what**  we want to achieve with our approach
-* <span style="font-weight: bold">Proposition</span>  
- :fa-arrow-circle-o-right: **how** we propose to enable this idea
-* <span style="font-weight: bold">Validation</span>  
- :fa-arrow-circle-o-right: **how** does this approach performs?
+<span style="color: white;position: absolute; bottom: 5px; right: 20px"><strong style="color: white">Maxime Tricoire</strong> - <em style="color: white; font-weight: normal">Research engineer, INRIA,  France</em></span>
 
 [slide shout]
 ## **>** Motivation
 
 [slide]
 ## **>** Why Single-Page Application
-* software are moving from:
-  * traditional :fa-desktop: desktop-based applications
-  * to client-server architectures hosted in the cloud :fa-cloud:
+* software is moving from:
+  * traditional :fa-desktop: **desktop-based** applications
+  * to **client-server** architectures hosted in the **cloud** :fa-cloud:
 
-
-* Web browsers :fa-chrome: :fa-firefox: :fa-safari: behave as application containers
-	* E-mail clients, Word processors,  Music Collection Managers, IDEs, ...
+<img src="$ROOT/images/gmail.png" width="400px" style="position: absolute; top: 360px; left: 100px"/>
+<img src="$ROOT/images/c9.png" width="375px" style="position: absolute; top: 360px; left: 550px;"/>
 
 [slide]
 ## **>** Why Single-Page Application
  - SPAs are the new desktop applications  
 :fa-arrow-circle-o-right: **fit** on a single web page  
-:fa-arrow-circle-o-right: provide a **fluid** user experience  by avoiding page reloads
+:fa-arrow-circle-o-right: provide a **fluid** user experience  by **avoiding** page reloads
 
 
 - **But**, unlike well-known desktop applications such as *Eclipse*  
-:fa-arrow-circle-o-right: no :fa-plug: pluggable architecture pattern frameworks  
+:fa-arrow-circle-o-right: no :fa-plug: **pluggable** architecture **pattern** frameworks  
 :fa-arrow-circle-o-right: no **dynamic** component loading **at runtime**
 
 [slide]
@@ -78,6 +54,13 @@
 <span class="kevOrange fa fa-arrows-h" style="font-size: 55px; position: absolute; top: 350px; left: 560px"></span>
 <img src="$ROOT/images/devices.png" width="200px" style="position:absolute; top: 300px; right: 150px"/>
 
+<span class="kevOrange" style="position: absolute; top: 450px; left: 135px">server-side<span>
+<span class="kevOrange" style="margin-left: 125px">object graph<span>
+<span class="kevOrange"style="margin-left: 205px">client-side<span>
+
+<div style="width: 430px; height: 250px; position: absolute; left: 100px; border: 6px solid #DF9D00; border-radius: 20px"></div>
+<div style="width: 530px; height: 230px; position: absolute; top:265px; left: 365px; border: 6px dotted #DF9D00; border-radius: 20px"></div>
+
 [slide]
 ## **>** Idea
 
@@ -87,27 +70,6 @@
  * provides a **composable** user-interface **dashboard** :fa-desktop:
 
 :fa-arrow-circle-o-right: **everything from a Web browser** without page reloads
-
-[slide shout]
-## **>** Proposition
-
-[slide]
-## **>** Proposition enablers
-
-* **Frontend** libraries to create an SPA
-* **Kevoree** to manage **model@run.time**
-* module **bundlers** to create standalone component
-* **contract-aware components** using Kevoree
-* user-interface **DSL** to manage component **layout**
-
-[slide shout]
-## **>** Frontend libraries
-
-[slide]
-## **>** Frontend libraries for SPA
- * **AngularJS** framework is made for Single-Page Application
- * Third-party libraries: **Gridster.js**, **Bootstrap**, **CodeMirror**, ...
- * Use **iframes** to **sandbox** components code
 
 [slide shout]
 ## **>** Model@run.time
@@ -152,9 +114,9 @@
 [slide]
 ## **>** Component bundles
 
-* **server-side** modules use **CommonJS** (Node.js)
+* **server-side** (Node.js) modules use **CommonJS**
+* which is **not** the standard for **Web browsers** :fa-chrome: :fa-firefox: :fa-safari:
 * are meant to be **split** in a multitude of sub-modules (dependencies)
-* CommonJS is **not** the standard for **Web browsers** :fa-chrome: :fa-firefox: :fa-safari:
 * the more dependencies they have the bigger the graph gets
 
 :fa-arrow-circle-o-right: **proposition**: use modules as **standalone bundles** :fa-archive:
@@ -217,11 +179,6 @@ public class ConsolePrinter {
 	  // this will be executed when the component as to start
     }
 ```
-
-[slide]
-## **>** Contract-aware components
-
-<img src="$ROOT/images/editor.png" height="400px" style="position: absolute; left: 200px" />
 
 [slide shout]
 ## **>** Component UI
@@ -305,57 +262,6 @@ function ($scope, instance) {
 </pre>
 
 [slide]
-## **>** Introducing KevoreeJS in the Browser
- 
-<img src="$ROOT/images/runjs.png" width="700px" style="margin-left: 50px" />
-
-[slide shout]
-## **>** Evaluation
-
-[slide]
-## **>** Evaluation
-
-> what is the **overhead** brought by our approach in terms of:  
->  **LoC**  
->  **reusable components**  
->  **time penalty**  
-
-:fa-arrow-circle-o-right: create a **sensor-based dashboard** using KevoreeJS
-
-[slide]
-## **>** Evaluation
-
-**LoC**  
-
-* KevoreeJS core: **56,671** LoC 
- * :fa-pencil: 15,584 are **hand-written**
- * the rest is **generated** by Kevoree
- * based on the **meta-model**
-
-[slide]
-## **>** Evaluation
-
-**Reusable components**  
-
-* to create the **sensor-based dashboard** we've created:
- * **8** components
- * **3** channels
- * **3** groups
-* all those components are **published** & **free** and can be re-used by **anyone**
-
-[slide]
-## **>** Evaluation
-
-**Time penalty**  
-
-* starting the **sensor-based dashboard** took
-* less than **2 seconds**
-* from scratch on a ** i7**,  **16Gb** and **SSD**
-* and **677ms** once components **cached**
-
-:fa-arrow-circle-o-right: the **main time :fa-clock-o: consuming**  action is component downloading
-
-[slide]
 ## **>** Conclusion
 
  * we have created a  **component-based** platform
@@ -364,6 +270,11 @@ function ($scope, instance) {
  * within a **Web browser**
 
 :fa-arrow-circle-o-right: available at http://runjs.kevoree.org
+
+[slide]
+## **>** Demo
+ 
+<img src="$ROOT/images/runjs.png" width="700px" style="margin-left: 50px" />
 
 [slide shout]
 ## **>** Thank you
