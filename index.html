@@ -2692,12 +2692,14 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </blockquote>
 <ul>
 <li><em>Authors</em><ul>
-<li><strong>Brice Morin</strong>: <em>research scientist</em> at SINTEF ICT, Oslo, Norway</li>
-<li><strong>Maxime Tricoire</strong>: <em>research engineer</em> at INRIA, Rennes, France</li>
+<li><strong>M.Tricoire</strong>, <strong>O.Barais</strong>, <strong>M.Leduc</strong>, <strong>Y.Bourcier</strong>
+<em>INRIA, IRISA, University of Rennes 1, Rennes, France</em></li>
+<li><strong>F.Fouquet</strong>, <strong>G.Nain</strong>, <strong>L.Mouline</strong> <em>SnT, Luxembourg</em></li>
+<li><strong>G.Sunyé</strong> <em>University of Nantes, France</em></li>
+<li><strong>B.Morin</strong> <em>SINTEF, Oslo, Norway</em></li>
 </ul>
 </li>
 </ul>
-<p>// list all the 9 authors on the paper ?</p>
 </div></section><section id="slide_2" class="slide"><div id="slide_2_wrap"><h2 id="overview">Overview</h2>
 <ul>
 <li><span style="font-weight: bold">Motivation</span><br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>why</strong> do we need <em>dynamically reconfigurable architectures</em> for SPAs</li>
@@ -2856,15 +2858,9 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </div></section><section id="slide_24" class="slide"><div id="slide_24_wrap"><h2 id="-contract-aware-components"><strong>&gt;</strong> Contract-aware components</h2>
 <p><img src="images/editor.png" height="400px" style="position: absolute; left: 200px" /></p>
 </div></section><section id="slide_25" class="slide shout"><div id="slide_25_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
-</div></section><section id="slide_26" class="slide"><div id="slide_26_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
+</div></section><section id="slide_26" class="slide"><div id="slide_26_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
 <ul>
-<li><strong>AngularJS</strong> is developped by <strong>Google</strong></li>
-<li><strong>widely</strong> used front-end <strong>framework</strong></li>
-<li>gives <strong>2-way data-binding</strong> between HTML <span class="kevOrange kevIcon fa fa-arrows-h"></span> JavaScript model</li>
-</ul>
-<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies</p>
-</div></section><section id="slide_27" class="slide"><div id="slide_27_wrap"><h2 id="-component-ui-angularjs"><strong>&gt;</strong> Component UI: AngularJS</h2>
-<ul>
+<li>opinionated: <strong>AngularJS</strong></li>
 <li>every component defines a <span class="kevOrange kevIcon fa fa-cog"></span> <strong>controller</strong> which is bound to the <span class="kevOrange kevIcon fa fa-eye"></span> <strong>view</strong></li>
 <li>so the view can <strong>adapt</strong> according to:<ul>
 <li>the component&#39;s <strong>lifecycle</strong></li>
@@ -2872,9 +2868,28 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </ul>
 </li>
 </ul>
-<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> reactive component&#39;s UI</p>
-</div></section><section id="slide_28" class="slide shout"><div id="slide_28_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
-</div></section><section id="slide_29" class="slide"><div id="slide_29_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+<p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> re-use <strong>community adopted</strong> Web technologies<br><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> <strong>reactive</strong> component&#39;s UI</p>
+</div></section><section id="slide_27" class="slide"><div id="slide_27_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+<pre><code class="lang-js"><span class="hljs-comment">// UI controller inside a component: ConsolePrinter.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$scope, instance</span>) </span>{
+  <span class="hljs-comment">// instance is the reference to the running component</span>
+  $scope.messages = instance.messages;
+
+  instance.onInput = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// update view when a new message arrives</span>
+    $scope.messages = instance.messages;
+  };
+}
+</code></pre>
+</div></section><section id="slide_28" class="slide"><div id="slide_28_wrap"><h2 id="-component-ui"><strong>&gt;</strong> Component UI</h2>
+<pre><code class="lang-html"><span class="hljs-comment">// Component view: console-printer.html</span>
+&lt;ul&gt;
+  &lt;li ng-repeat="msg in messages"&gt;{{ msg }}&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p><img src="images/console_printer.png" width="350px" style="position: absolute; top: 320px; left: 300px;"/></p>
+</div></section><section id="slide_29" class="slide shout"><div id="slide_29_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
+</div></section><section id="slide_30" class="slide"><div id="slide_30_wrap"><h2 id="-user-interface-dsl"><strong>&gt;</strong> User-interface DSL</h2>
 <ul style="margin: 0">
   <li><strong>describe</strong> how component should <strong>render</strong></li>
 </ul>
@@ -2908,15 +2923,15 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </pre>
 </pre>
 
-</div></section><section id="slide_30" class="slide"><div id="slide_30_wrap"><h2 id="-introducing-kevoreejs-in-the-browser"><strong>&gt;</strong> Introducing KevoreeJS in the Browser</h2>
+</div></section><section id="slide_31" class="slide"><div id="slide_31_wrap"><h2 id="-introducing-kevoreejs-in-the-browser"><strong>&gt;</strong> Introducing KevoreeJS in the Browser</h2>
 <p><img src="images/runjs.png" width="700px" style="margin-left: 50px" /></p>
-</div></section><section id="slide_31" class="slide shout"><div id="slide_31_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
-</div></section><section id="slide_32" class="slide"><div id="slide_32_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
+</div></section><section id="slide_32" class="slide shout"><div id="slide_32_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
+</div></section><section id="slide_33" class="slide"><div id="slide_33_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
 <blockquote>
 <p>what is the <strong>overhead</strong> brought by our approach in terms of:<br> <strong>LoC</strong><br> <strong>reusable components</strong><br> <strong>time penalty</strong>  </p>
 </blockquote>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> create a <strong>sensor-based dashboard</strong> using KevoreeJS</p>
-</div></section><section id="slide_33" class="slide"><div id="slide_33_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
+</div></section><section id="slide_34" class="slide"><div id="slide_34_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
 <p><strong>LoC</strong>  </p>
 <ul>
 <li>KevoreeJS core: <strong>56,671</strong> LoC <ul>
@@ -2926,7 +2941,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </ul>
 </li>
 </ul>
-</div></section><section id="slide_34" class="slide"><div id="slide_34_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
+</div></section><section id="slide_35" class="slide"><div id="slide_35_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
 <p><strong>Reusable components</strong>  </p>
 <ul>
 <li>to create the <strong>sensor-based dashboard</strong> we&#39;ve created:<ul>
@@ -2937,7 +2952,7 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 </li>
 <li>all those components are <strong>published</strong> &amp; <strong>free</strong> and can be re-used by <strong>anyone</strong></li>
 </ul>
-</div></section><section id="slide_35" class="slide"><div id="slide_35_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
+</div></section><section id="slide_36" class="slide"><div id="slide_36_wrap"><h2 id="-evaluation"><strong>&gt;</strong> Evaluation</h2>
 <p><strong>Time penalty</strong>  </p>
 <ul>
 <li>starting the <strong>sensor-based dashboard</strong> took</li>
@@ -2946,15 +2961,15 @@ url('data:application/x-font-svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25l
 <li>and <strong>677ms</strong> once components <strong>cached</strong></li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> the <strong>main time <span class="kevOrange kevIcon fa fa-clock-o"></span> consuming</strong>  action is component downloading</p>
-</div></section><section id="slide_36" class="slide"><div id="slide_36_wrap"><h2 id="-conclusion"><strong>&gt;</strong> Conclusion</h2>
+</div></section><section id="slide_37" class="slide"><div id="slide_37_wrap"><h2 id="-conclusion"><strong>&gt;</strong> Conclusion</h2>
 <ul>
-<li>wa have created a  <strong>component-based</strong> platform</li>
+<li>we have created a  <strong>component-based</strong> platform</li>
 <li>that can adapt <strong>at runtime</strong></li>
 <li>according to a <strong>configuration model</strong></li>
 <li>within a <strong>Web browser</strong></li>
 </ul>
 <p><span class="kevOrange kevIcon fa fa-arrow-circle-o-right"></span> available at <a href="http://runjs.kevoree.org">http://runjs.kevoree.org</a></p>
-</div></section><section id="slide_37" class="slide shout"><div id="slide_37_wrap"><h2 id="-thank-you"><strong>&gt;</strong> Thank you</h2>
+</div></section><section id="slide_38" class="slide shout"><div id="slide_38_wrap"><h2 id="-thank-you"><strong>&gt;</strong> Thank you</h2>
 <h2 style="font-size: 60px; margin-top: 150px">Questions <span class="kevOrange fa fa-question-circle"></span></h2>
 
 </div></section>

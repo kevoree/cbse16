@@ -15,10 +15,11 @@
 > *European Union Seventh Framework Program (FP7/2007-2013)*
 
 - *Authors*
- - **Brice Morin**: *research scientist* at SINTEF ICT, Oslo, Norway
- - **Maxime Tricoire**: *research engineer* at INRIA, Rennes, France
-
-// list all the 9 authors on the paper ?
+ - **M.Tricoire**, **O.Barais**, **M.Leduc**, **Y.Bourcier**
+   *INRIA, IRISA, University of Rennes 1, Rennes, France*
+ - **F.Fouquet**, **G.Nain**, **L.Mouline** *SnT, Luxembourg*
+ - **G.Sunyé** *University of Nantes, France*
+ - **B.Morin** *SINTEF, Oslo, Norway*
 
 [slide]
 ## Overview
@@ -226,23 +227,43 @@ public class ConsolePrinter {
 ## **>** Component UI
 
 [slide]
-## **>** Component UI: AngularJS
-
-* **AngularJS** is developped by **Google**
-* **widely** used front-end **framework**
-* gives **2-way data-binding** between HTML :fa-arrows-h: JavaScript model
-
-:fa-arrow-circle-o-right: re-use **community adopted** Web technologies
-
-[slide]
-## **>** Component UI: AngularJS
-
+## **>** Component UI
+* opinionated: **AngularJS**
 * every component defines a :fa-cog: **controller** which is bound to the :fa-eye: **view**
 * so the view can **adapt** according to:
  *  the component's **lifecycle**
  *  **incoming**/**outcoming** messages 
 
-:fa-arrow-circle-o-right: reactive component's UI
+:fa-arrow-circle-o-right: re-use **community adopted** Web technologies  
+:fa-arrow-circle-o-right: **reactive** component's UI
+
+[slide]
+## **>** Component UI
+
+```js
+// UI controller inside a component: ConsolePrinter.js
+function ($scope, instance) {
+  // instance is the reference to the running component
+  $scope.messages = instance.messages;
+	
+  instance.onInput = function () {
+	// update view when a new message arrives
+	$scope.messages = instance.messages;
+  };
+}
+```
+
+[slide]
+## **>** Component UI
+
+```html
+// Component view: console-printer.html
+<ul>
+  <li ng-repeat="msg in messages">{{ msg }}</li>
+</ul>
+```
+
+<img src="$ROOT/images/console_printer.png" width="350px" style="position: absolute; top: 320px; left: 300px;"/>
 
 [slide shout]
 ## **>** User-interface DSL
@@ -337,7 +358,7 @@ public class ConsolePrinter {
 [slide]
 ## **>** Conclusion
 
- * wa have created a  **component-based** platform
+ * we have created a  **component-based** platform
  * that can adapt **at runtime**
  * according to a **configuration model**
  * within a **Web browser**
